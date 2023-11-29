@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/admin.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+    crossorigin="anonymous"></script>
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css'>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.bundle.js'></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous"
+    rel="stylesheet">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.1/html2pdf.bundle.min.js"
+    integrity="sha512vDKWohFHe2vkVWXHp3tKvIxxXg0pJxeid5eo+UjdjME3DBFBn2F8yWOE0XmiFcFbXxrEOR1JriWEno5Ckpn15A=="
+    crossorigin="anonymous">
+   </script>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body id="main">
+  <nav id="nav">
+    <span id="header">Task Tracking</span>
+    <button class="login" style="margin-right:550 px;" onclick="assignTask()">Create Task</button>
+    
+    <button class="login" onclick="userDetails()">Show Users</button>
+    <button class="login" onclick="viewTask()">View Task</button>
+<input type="text" placeholder="search task" id="search">
+<button id="searchTask" onclick="searchTask()"><i class="fa fa-search"></i></button>
+  <a class="navbar-brand" id="logo" href="#">
+      <img src="./lib/logo.jfif" style="width:40px;" class="rounded-pill">&nbsp;<select id="selectOption">
+        <option class="admin">Admin</option>
+        <option class="admin">Logout</option>
+      </select>
+    </a>
+  </nav>
+
+
+  
+  <div id="userdetails"></div>
+  <div id="viewTask"></div>
+  <div id="shwTask"></div>
+  <div id="status"></div>
+  
+  <form id="myForm">
+    <br><br>
+    <h4 id="assign">Assign a Task</h4>
+    <br>
+    <label class="formData">Task Name</label><br>
+    <input type="text" id="tskname" placeholder="Enter task name"><br><br>
+    <label class="formData">Description</label><br>
+    <textarea id="des" placeholder="Enter description"></textarea><br>
+    <label class="formData">Duration</label><br>
+    <input type="text" id="duration" placeholder="Enter duration"><br><br>
+    <button onclick="addTask()" id="formAdd">Add task</button>
+  </form>
+
+
+  <div class="modal fade" id="formModal1" tabindex="-1" role="dialog" aria-labelledby="formModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="formModalLabel" style="color:black;">Task Updated</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form id="updateUserForm">
+          <div class="modal-body">
+            <div class="form-group">
+              <label style="color:black;">Task Name</label>
+              <input type="text" class="form-control" id="name3" placeholder="Name ">
+            </div>
+            <div class="form-group">
+              <label style="color:black;">Description</label>
+              <input type="textarea" class="form-control" id="eventtype1" placeholder="Event type">
+            </div>
+
+            <div class="form-group">
+              <label style="color:black;">Duration</label>
+              <input type="text" class="form-control" id="troopname1" placeholder="Troop name">
+            </div>
+            <div>
+              <input type="button" class="btn btn-primary" style="width:340px;margin-left: 20px;" value="Update Task" id="register" data-dismiss="modal"
+                onclick="newfunction()">
+             </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+  <div id="assForm">
+    <div class="modal fade" id="formModal2" tabindex="-1" role="dialog" aria-labelledby="formModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" id="formModalLabel" style="color:black;">Assign a Task</h3>
+            <button type="button" class="close" data-dismiss="modal" aria-label="close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form id="assignForm">
+            <div class="modal-body">
+              <div class="form-group" id="drop">
+
+              </div>
+
+              <div>
+                <input type="button" class="btn btn-info" style="width:340px;margin-left: 20px;" value="Assign Task" id="register" data-dismiss="modal"
+                  onclick="assign()">
+                
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="./js/admin.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</html>

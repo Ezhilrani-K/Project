@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/index.css">
+     <script src="./js/script.js"></script>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body id="main">
+    
+    <nav id="nav">
+        <span id="header">Task  Tracker</span>
+        <button class="register" onclick="register()">Register</button>
+        <button class="login" onclick="login()">User Login</button>
+        <button class="adlogin" onclick="adminLogin()">Admin Login</button>
+    </nav>
+
+     <div id="mainContent">
+      
+        <!-- <div id="content">
+            Empower your workplace with the power of effective task management and generate maximum productivity. An easy-to-use free of cost solution that offers effective team management.
+            The tool helps in the division of tasks into the measurable matrix. Thus, allowing an accountable, efficient and productive work environment to thrive.
+        </div> -->
+
+<!-- <marquee class="marq">A tool that makes task management Simple</marquee> -->
+        <!-- <video width="320" height="240" controls>
+            <source src="https://tasktracker.in/dist/img/tasktrackerapp_new.mp4" type="video/mp4">
+            
+          </video> -->
+     </div>
+    
+        <form id="formRegister" >
+            <div id="registerForm">
+            <span class="frmReg">Register</span>
+            <p><label>User name</label><p>
+            <p><div class="input">
+                <i class="fa fa-user" id="userLabel"></i>
+                <input type="text"  id="user" class="box" placeholder="Enter username">
+            </div></p>
+
+            <p><label>Password</label></p>
+            <p><div class="input">
+                <i class="fa fa-lock" id="passwordLabel"></i>
+                <input type="password" id="password" class="box" placeholder="Enter Password">
+            </div></p>
+
+            <p><label>Email Address</label><p>
+            <p><div class="input">
+                <i class="fa fa-envelope" id="emailLabel"></i>
+                <input type="email" id="email" class="box"placeholder="Enter email id">
+            </div></p>
+
+            <input type="button" class="regbtn" value="Regsiter" id="register"  onclick="registerUser()"  class="btn btn-success" >
+            <button class="back" onclick="back()">Back</button>
+        </div>
+        </form>
+
+
+
+        <form id="formLogin" >
+            <div id="f1">
+            <span class="frmReg">Login</span>
+            <p><label>User name</label><p>
+            <p><div class="input">
+                <i class="fa-regular fa-user" id="userLabel"></i>
+                <input type="text" class="box" id="username" placeholder="Enter username">
+            </div></p>
+
+            <p><label>Password</label></p>
+            <p><div class="input">
+                <i class="fa fa-lock" id="passwordLabel"></i>
+                <input type="password" class="box" id="pwd" placeholder="Enter Password">
+            </div></p>
+
+           
+            <input type="button" value="Login" id="register" class="regbtn"  onclick="loginUser()" class="btn btn-primary">
+            <button class="back" class="cancel" style="border-radius: 7px;" onclick="back()">Back</button>
+        </div>
+        </form>
+
+
+        <form id="adminLogin" >
+            <div id="f1">
+            <span class="frmReg">Admin Login</span>
+            <p><label>User name</label><p>
+            <p><div class="input">
+                <i class="fa-regular fa-user" id="userLabel"></i>
+                <input type="text" class="box" id="adminname" placeholder="Enter username">
+            </div></p>
+
+            <p><label>Password</label></p>
+            <p><div class="input">
+                <i class="fa fa-lock" id="passwordLabel"></i>
+                <input type="password" class="box" id="adminpwd" placeholder="Enter Password">
+            </div></p>
+
+           
+            <input type="button" value="Login" id="register" class="regbtn"  onclick="loginAdmin()" class="btn btn-primary">
+            <button class="back" class="cancel" onclick="back()">Back</button>
+        </div>
+        </form>
+    
+
+    </div>
+    </body>
+  

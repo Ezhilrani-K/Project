@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./css/user.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+</head>
+
+<body id="main">
+   <nav id="nav">
+        <span id="header">Welcome to Task Tracking </span>
+        <button onclick="displayTask()" id="common" class="allTask">All Task</button>
+        <button onclick="myTask()" id="common" class="myTask">My Task</button>
+        <input type="text" placeholder="search task with status" id="search">
+        <button id="searchTask" onclick="searchTask()">
+            <i class="fa fa-search"></i></button>
+        <a class="navbar-brand" id="logo" href="#">
+            <img src="./lib/logo.jfif" style="width:40px;" class="rounded-pill">&nbsp;
+            <select id="selectOption">
+                <option id="name"></option>
+                <option>Logout</option>
+            </select>
+        </a>
+    </nav>
+    <br>
+    <div id="notifi" style="border:2px solid rgb(66, 132, 49);background-color: rgb(84, 182, 84);width:40%;height: 50px;;margin-left: 120px;padding-left: 100px;padding-top: 5px;font-size: 25px;font-family: 'Times New Roman', Times, serif;"></div>
+   
+    <h4 class="assignedTask">Assigned Tasks</h4>
+    <br>
+
+    <div id="total">
+        <div id="task"></div>
+
+         <span id="picture"><img src="https://www.prosoftly.com/wp-content/uploads/2020/01/task.png"
+                style="width:600px;height:800px;margin-left: 25px;margin-top: -120px;"></span>
+
+        <div id="taskDetails">
+
+            <button onclick="closeForm()"
+                style="float:right;background-color: transparent;border: none;color:white">X</button><br>
+            <h4 id="head">Task Details</h4>
+            <div class="sub">TaskName : <span id="tsk"></span></div><br>
+            <div class="sub">Description : <span id="des"></span></div><br>
+            <div class="sub">Duration : <span id="dur"></span></div><br>
+            <div class="sub">Comments: <span id="sta"></span></div><br>
+        </div></br>
+
+    </div>
+
+
+    <div id="allTask"></div>
+
+
+
+    <div class="modal fade" id="formModal1" tabindex="-1" role="dialog" aria-labelledby="formModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="formModalLabel">Add Comments</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form id="Comment">
+          <div class="modal-body">
+            <div class="form-group">
+              <label>Comments</label>
+              <textarea  class="form-control" id="name3" placeholder="Add your comments here" ></textarea>
+             
+            </div>
+            
+
+
+
+
+
+            <div>
+              <input type="button" class="btn btn-primary" style="width:340px;margin-left: 20px;" value="Add Comments" id="register" data-dismiss="modal"
+                onclick="addComment()">
+             
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+   
+</body>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="./js/user.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+    crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+    crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css'>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.bundle.js'></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous"
+    rel="stylesheet">
+<!-- Html2Pdf -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.1/html2pdf.bundle.min.js"
+    integrity="sha512vDKWohFHe2vkVWXHp3tKvIxxXg0pJxeid5eo+UjdjME3DBFBn2F8yWOE0XmiFcFbXxrEOR1JriWEno5Ckpn15A=="
+    crossorigin="anonymous">
+    </script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</html>
